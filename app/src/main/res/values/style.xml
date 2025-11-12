@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CategoryButton" parent="Widget.Material3.Button.TextButton">
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">#1C398E</item>
+    </style>
+
+</resources>

@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:paddingTop="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/logoApp"
+            android:src="@drawable/logo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="PlayArena Logo" />
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:text="PlayArena"
+            android:textColor="#1C398E"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+<!--    <HorizontalScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="12dp">-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/categoryContainer"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/allBtn"-->
+<!--                android:text="All"-->
+<!--                style="@style/CategoryButton"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/futsalBtn"-->
+<!--                android:text="Futsal"-->
+<!--                style="@style/CategoryButton"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/badmintonBtn"-->
+<!--                android:text="Badminton"-->
+<!--                style="@style/CategoryButton"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/basketBtn"-->
+<!--                android:text="Basket"-->
+<!--                style="@style/CategoryButton"/>-->
+<!--            <Button-->
+<!--                android:id="@+id/tenisBtn"-->
+<!--                android:text="Tenis"-->
+<!--                style="@style/CategoryButton"/>-->
+
+<!--        </LinearLayout>-->
+<!--    </HorizontalScrollView>-->
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/search_border"
+        android:queryHint="Search..." />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp" />
+
+    <include layout="@layout/footer" />
+</LinearLayout>
