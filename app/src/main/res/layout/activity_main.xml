@@ -20,7 +20,10 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginEnd="12dp"
-            android:contentDescription="PlayArena Logo" />
+            android:contentDescription="PlayArena Logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
             android:id="@+id/appTitle"
@@ -28,45 +31,40 @@
             android:textColor="#1C398E"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:text="Login"
+            android:backgroundTint="#1C398E"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="Register"
+            android:textColor="#1C398E"
+            android:textSize="12sp"
+            android:background="@drawable/button_outline"
+            app:backgroundTint="@null"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </LinearLayout>
 
-<!--    <HorizontalScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="12dp">-->
-
-<!--        <LinearLayout-->
-<!--            android:id="@+id/categoryContainer"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content">-->
-
-<!--            <Button-->
-<!--                android:id="@+id/allBtn"-->
-<!--                android:text="All"-->
-<!--                style="@style/CategoryButton"/>-->
-<!--            <Button-->
-<!--                android:id="@+id/futsalBtn"-->
-<!--                android:text="Futsal"-->
-<!--                style="@style/CategoryButton"/>-->
-<!--            <Button-->
-<!--                android:id="@+id/badmintonBtn"-->
-<!--                android:text="Badminton"-->
-<!--                style="@style/CategoryButton"/>-->
-<!--            <Button-->
-<!--                android:id="@+id/basketBtn"-->
-<!--                android:text="Basket"-->
-<!--                style="@style/CategoryButton"/>-->
-<!--            <Button-->
-<!--                android:id="@+id/tenisBtn"-->
-<!--                android:text="Tenis"-->
-<!--                style="@style/CategoryButton"/>-->
-
-<!--        </LinearLayout>-->
-<!--    </HorizontalScrollView>-->
+    <ImageView
+        android:id="@+id/banner"
+        android:src="@drawable/banner"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Banner Booking" />
 
     <SearchView
         android:id="@+id/searchView"
@@ -75,6 +73,64 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/search_border"
         android:queryHint="Search..." />
+
+    <LinearLayout
+        android:id="@+id/categoryFilter"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <Button
+            android:id="@+id/btnAll"
+            android:text="All"
+            android:textSize="12sp"
+            android:backgroundTint="#C8C7C9"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"/>
+
+        <Button
+            android:id="@+id/btnBadminton"
+            android:text="Badminton"
+            android:textSize="12sp"
+            android:backgroundTint="#C8C7C9"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"/>
+
+        <Button
+            android:id="@+id/btnBasket"
+            android:text="Basket"
+            android:textSize="12sp"
+            android:backgroundTint="#C8C7C9"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"/>
+
+        <Button
+            android:id="@+id/btnFutsal"
+            android:text="Futsal"
+            android:textSize="12sp"
+            android:backgroundTint="#C8C7C9"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"/>
+
+        <Button
+            android:id="@+id/btnTenis"
+            android:text="Tenis"
+            android:textSize="12sp"
+            android:backgroundTint="#C8C7C9"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

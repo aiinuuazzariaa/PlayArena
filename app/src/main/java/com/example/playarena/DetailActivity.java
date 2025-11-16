@@ -12,10 +12,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailActivity extends AppCompatActivity {
-    private TextView name, location, category, description;
+    private TextView name, location, category, description, rules;
     private RatingBar rating;
     private ImageView pict;
-    private Button btnBack, btnMap;
+    private Button btnBack, btnMap, btnOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,18 @@ public class DetailActivity extends AppCompatActivity {
         rating = findViewById(R.id.tvRating);
         category = findViewById(R.id.tvCategory);
         description = findViewById(R.id.tvDescription);
+        rules = findViewById(R.id.tvRules);
         pict = findViewById(R.id.ivPict);
         btnBack = findViewById(R.id.btnBack);
         btnMap = findViewById(R.id.btnMap);
+        btnOrder = findViewById(R.id.btnOrder);
 
         String nameLapangan = getIntent().getStringExtra("name");
         String locationLapangan = getIntent().getStringExtra("location");
         float ratingLapangan = getIntent().getFloatExtra("rating", 0f);
         String categoryLapangan = getIntent().getStringExtra("category");
         String descriptionLapangan = getIntent().getStringExtra("description");
+        String rulesLapangan = getIntent().getStringExtra("rules");
         int pictLapangan = getIntent().getIntExtra("pict", 0);
 
         name.setText(nameLapangan);
@@ -43,6 +46,7 @@ public class DetailActivity extends AppCompatActivity {
         rating.setRating(ratingLapangan);
         category.setText(categoryLapangan);
         description.setText(descriptionLapangan);
+        rules.setText(rulesLapangan);
         pict.setImageResource(pictLapangan);
 
         Toast.makeText(this, "Detail show " + nameLapangan, Toast.LENGTH_SHORT).show();
@@ -69,6 +73,11 @@ public class DetailActivity extends AppCompatActivity {
                         "Maps link not available for this place.",
                         Toast.LENGTH_SHORT).show();
             }
+        });
+
+        btnOrder.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailActivity.this, OrderActivity.class);
+            startActivity(intent);
         });
     }
 }

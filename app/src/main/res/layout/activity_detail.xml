@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,8 +17,8 @@
             android:id="@+id/btnBack"
             android:text="Back"
             android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:backgroundTint="#1C398E"
+            android:textSize="12sp"
+            android:backgroundTint="#B7192C"
             android:layout_marginBottom="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -72,10 +73,20 @@
                 android:scaleY="0.9" />
         </LinearLayout>
 
-        <TextView
+        <Button
             android:id="@+id/tvCategory"
-            android:textColor="#555"
-            android:textSize="18sp"
+            android:backgroundTint="#1C398E"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Description"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="bold"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -84,8 +95,25 @@
             android:id="@+id/tvDescription"
             android:textColor="#000000"
             android:textSize="18sp"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <TextView
+            android:text="Rules"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="bold"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvRules"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginTop="4dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -94,13 +122,14 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:layout_margin="6dp">
 
             <Button
                 android:id="@+id/btnMap"
                 android:text="Open in Google Maps"
                 android:textColor="#FFFFFF"
+                android:textSize="12sp"
                 android:backgroundTint="#1C398E"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -111,6 +140,7 @@
                 android:id="@+id/btnOrder"
                 android:text="Order Now"
                 android:textColor="#FFFFFF"
+                android:textSize="12sp"
                 android:backgroundTint="#1C398E"
                 android:layout_width="0dp"
                 android:layout_weight="1"
