@@ -17,26 +17,60 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#000000"
-            android:layout_marginBottom="16dp"
-            android:layout_width="match_parent"
             android:gravity="center"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:text="Field Name"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvFieldName"
+            android:text="-"
+            android:textColor="#000000"
+            android:background="@drawable/input_border"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Price"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvFieldPrice"
+            android:text="Rp 0"
+            android:textColor="#000000"
+            android:background="@drawable/input_border"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:text="Full Name"
             android:textColor="#000000"
             android:textStyle="bold"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
         <EditText
             android:id="@+id/etName"
             android:hint="Enter your name"
             android:textColor="#000000"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:background="@drawable/input_border"
-            android:padding="12dp"/>
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:text="Phone Number"
@@ -44,16 +78,17 @@
             android:textStyle="bold"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
         <EditText
             android:id="@+id/etPhone"
             android:hint="08123456789"
             android:textColor="#000000"
             android:inputType="phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:background="@drawable/input_border"
-            android:padding="12dp"/>
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:text="Booking Date"
@@ -61,7 +96,8 @@
             android:textStyle="bold"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
         <EditText
             android:id="@+id/etDate"
             android:hint="Choose date"
@@ -70,7 +106,7 @@
             android:background="@drawable/input_border"
             android:padding="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -79,17 +115,18 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
                 <TextView
                     android:text="Start Time"
                     android:textColor="#000000"
                     android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <EditText
                     android:id="@+id/etStartTime"
                     android:hint="17:00"
@@ -98,22 +135,24 @@
                     android:background="@drawable/input_border"
                     android:padding="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
 
             <LinearLayout
-                android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_marginStart="8dp"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
                 <TextView
                     android:text="End Time"
                     android:textColor="#000000"
                     android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
                 <EditText
                     android:id="@+id/etEndTime"
                     android:hint="18:00"
@@ -122,8 +161,10 @@
                     android:background="@drawable/input_border"
                     android:padding="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
+
         </LinearLayout>
 
         <TextView
@@ -132,7 +173,8 @@
             android:textStyle="bold"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
         <EditText
             android:id="@+id/etNotes"
             android:hint="Optional"
@@ -142,15 +184,54 @@
             android:minHeight="100dp"
             android:gravity="top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Total Price"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:text="Rp 0"
+            android:textColor="#000000"
+            android:background="@drawable/input_border"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:id="@+id/rgPayment"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbCash"
+                android:text="Cash"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/rbQris"
+                android:text="QRIS"
+                android:textColor="#000000"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
 
         <LinearLayout
             android:orientation="horizontal"
             android:gravity="center"
+            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_margin="6dp">
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/btnBackOrder"
@@ -158,10 +239,10 @@
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:backgroundTint="#B7192C"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"/>
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/btnConfirmOrder"
@@ -169,10 +250,11 @@
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:backgroundTint="#198754"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"/>
+                android:layout_marginStart="6dp"
+                android:layout_weight="1" />
+
         </LinearLayout>
 
     </LinearLayout>

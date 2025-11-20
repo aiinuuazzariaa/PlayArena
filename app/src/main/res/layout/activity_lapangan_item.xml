@@ -106,18 +106,35 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content" />
 
-            <Button
-                android:id="@+id/btnDetail"
-                android:text="View more"
-                android:textSize="12sp"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#1C398E"
-                android:layout_marginTop="8dp"
-                android:layout_gravity="end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/price"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#1C398E"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btnDetail"
+                    android:text="View more"
+                    android:textSize="12sp"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#1C398E"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

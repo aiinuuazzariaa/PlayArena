@@ -14,8 +14,10 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class LapanganItemActivity extends RecyclerView.Adapter<LapanganItemActivity.ViewHolder> implements Filterable {
     private Context context;
@@ -43,6 +45,12 @@ public class LapanganItemActivity extends RecyclerView.Adapter<LapanganItemActiv
         holder.category.setText(lapangan.getCategory());
         holder.description.setText(lapangan.getDescription());
         holder.rules.setText(lapangan.getRules());
+
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale("in", "ID"));
+        String hargaRupiah = formatRupiah.format(lapangan.getPrice());
+        hargaRupiah = hargaRupiah.replace("Rp.", "Rp. ");
+        holder.price.setText(hargaRupiah);
+
         holder.pict.setImageResource(lapangan.getPict());
         holder.rating.setRating(lapangan.getRating());
         holder.rating_value.setText(String.valueOf(lapangan.getRating()));
@@ -54,6 +62,7 @@ public class LapanganItemActivity extends RecyclerView.Adapter<LapanganItemActiv
             intent.putExtra("category", lapangan.getCategory());
             intent.putExtra("description", lapangan.getDescription());
             intent.putExtra("rules", lapangan.getRules());
+            intent.putExtra("price", lapangan.getPrice());
             intent.putExtra("pict", lapangan.getPict());
             intent.putExtra("maps", lapangan.getMaps());
             intent.putExtra("rating", lapangan.getRating());
@@ -102,7 +111,7 @@ public class LapanganItemActivity extends RecyclerView.Adapter<LapanganItemActiv
     };
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name, location, category, description, rules, rating_value;
+        TextView name, location, category, description, rules, price, rating_value;
         RatingBar rating;
         ImageView pict;
         Button btn_detail, btn_map;
@@ -114,6 +123,7 @@ public class LapanganItemActivity extends RecyclerView.Adapter<LapanganItemActiv
             category = itemView.findViewById(R.id.category);
             description = itemView.findViewById(R.id.description);
             rules = itemView.findViewById(R.id.rules);
+            price = itemView.findViewById(R.id.price);
             pict = itemView.findViewById(R.id.pict);
             btn_detail = itemView.findViewById(R.id.btnDetail);
             btn_map = itemView.findViewById(R.id.btnMap);

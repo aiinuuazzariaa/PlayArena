@@ -7,15 +7,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class OrderDatabase extends SQLiteOpenHelper{
     private static final String DB_NAME = "orders.db";
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 5;
     public static final String TABLE_ORDER = "orders";
     public static final String COL_ID = "id";
+    public static final String COL_TRANSACTION = "transaction_number";
+    public static final String COL_FIELD_NAME = "field_name";
+    public static final String COL_PRICE = "price";
     public static final String COL_NAME = "name";
     public static final String COL_PHONE = "phone";
     public static final String COL_DATE = "date";
     public static final String COL_START = "start_time";
     public static final String COL_END = "end_time";
     public static final String COL_NOTES = "notes";
+    public static final String COL_TOTAL = "total_price";
 
     public OrderDatabase(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -25,12 +29,16 @@ public class OrderDatabase extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         String createOrderTable = "CREATE TABLE " + TABLE_ORDER + " ("
                 + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + COL_TRANSACTION + " TEXT, "
+                + COL_FIELD_NAME + " TEXT, "
+                + COL_PRICE + " REAL, "
                 + COL_NAME + " TEXT, "
                 + COL_PHONE + " TEXT, "
                 + COL_DATE + " TEXT, "
                 + COL_START + " TEXT, "
                 + COL_END + " TEXT, "
-                + COL_NOTES + " TEXT"
+                + COL_NOTES + " TEXT, "
+                + COL_TOTAL + " REAL "
                 + ")";
         db.execSQL(createOrderTable);
     }
@@ -41,18 +49,26 @@ public class OrderDatabase extends SQLiteOpenHelper{
         onCreate(db);
     }
 
-    public boolean insertOrder(String name, String phone, String date, String start, String end, String notes) {
+    public boolean insertOrder(String transactionNumber, String fieldName, float price, String name, String phone, String date, String start, String end, String notes, float totalPrice) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
+        cv.put(COL_TRANSACTION, transactionNumber);
+        cv.put(COL_FIELD_NAME, fieldName);
+        cv.put(COL_PRICE, price);
         cv.put(COL_NAME, name);
         cv.put(COL_PHONE, phone);
         cv.put(COL_DATE, date);
         cv.put(COL_START, start);
         cv.put(COL_END, end);
         cv.put(COL_NOTES, notes);
+        cv.put(COL_TOTAL, totalPrice);
 
         long result = db.insert(TABLE_ORDER, null, cv);
         return result != -1;
+    }
+
+    public String generateTransactionNumber() {
+        return "TRX-" + System.currentTimeMillis();
     }
 }

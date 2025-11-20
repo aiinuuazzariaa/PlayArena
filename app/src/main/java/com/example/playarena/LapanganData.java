@@ -26,6 +26,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                30000,
                 R.drawable.platinum_dieng,
                 "https://maps.app.goo.gl/Cur3pUGYbmbMCCQF8",
                 4.8f
@@ -51,6 +52,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                30000,
                 R.drawable.platinum_karya_timur,
                 "https://maps.app.goo.gl/tPCtvMHyVx6r5SPW7",
                 4.8f
@@ -76,6 +78,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                30000,
                 R.drawable.platinum_candi_trowulan,
                 "https://maps.app.goo.gl/eE9Dy2nFZsFFj1Ws9",
                 4.5f
@@ -101,6 +104,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                50000,
                 R.drawable.basket_um,
                 "https://maps.app.goo.gl/jRzTPUZ8eWzGn8r87",
                 4.7f
@@ -126,6 +130,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                50000,
                 R.drawable.basket_rampal,
                 "https://maps.app.goo.gl/GqgyQEQcyLtQwYeH7",
                 4.6f
@@ -151,6 +156,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                50000,
                 R.drawable.basket_ub_dieng,
                 "https://maps.app.goo.gl/wLu9qHPZHLCJEGWc7",
                 4.4f
@@ -176,6 +182,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                90000,
                 R.drawable.futsal_ss,
                 "https://maps.app.goo.gl/uXy2mrkAE717huJV7",
                 4.0f
@@ -201,6 +208,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                90000,
                 R.drawable.futsal_sm,
                 "https://maps.app.goo.gl/zBCjZvw78AiB7fVA9",
                 4.5f
@@ -226,6 +234,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                90000,
                 R.drawable.futsal_nikolas1,
                 "https://maps.app.goo.gl/c2m2rGVk7MTLNCGV7",
                 4.3f
@@ -251,6 +260,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                90000,
                 R.drawable.futsal_nikolas2,
                 "https://maps.app.goo.gl/XfTfoWszXNEaLDhL7",
                 4.6f
@@ -276,6 +286,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                120000,
                 R.drawable.tenis_araya,
                 "https://maps.app.goo.gl/GVmC5AZQn2zXCKtUA",
                 4.7f
@@ -301,6 +312,7 @@ public class LapanganData {
                         + "9. Children under 12 must be under adult supervision. \n"
                         + "10. Use the facilities in an orderly and wise manner. \n"
                         + "Violations of the rules may result in sanctions in the form of warnings, fines, or a ban on entry. \n",
+                120000,
                 R.drawable.tenis_rampal,
                 "https://maps.app.goo.gl/8mw8voXHLjG6X2mu5",
                 4.8f
