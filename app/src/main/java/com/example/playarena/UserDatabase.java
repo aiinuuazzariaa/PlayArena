@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class UserDatabase extends SQLiteOpenHelper {
+
     private static final String DATABASE_NAME = "users.db";
     private static final int DATABASE_VERSION = 1;
 
@@ -17,10 +18,10 @@ public class UserDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE users (" +
-                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "email TEXT UNIQUE, " +
-                "name TEXT, " +
-                "phone TEXT, " +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "email TEXT UNIQUE," +
+                "name TEXT," +
+                "phone TEXT," +
                 "password TEXT)");
     }
 
@@ -30,10 +31,9 @@ public class UserDatabase extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertUser(String email, String name, String phone, String password) {
+    public boolean registerUser(String email, String name, String phone, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-
         values.put("email", email);
         values.put("name", name);
         values.put("phone", phone);
@@ -45,7 +45,6 @@ public class UserDatabase extends SQLiteOpenHelper {
 
     public boolean checkUserLogin(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-
         Cursor cursor = db.rawQuery(
                 "SELECT * FROM users WHERE email=? AND password=?",
                 new String[]{email, password}
@@ -58,17 +57,20 @@ public class UserDatabase extends SQLiteOpenHelper {
 
     public User getUserByEmail(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM users WHERE email = ?", new String[]{email});
+        Cursor cursor = db.rawQuery(
+                "SELECT * FROM users WHERE email=?",
+                new String[]{email}
+        );
 
         if (cursor.moveToFirst()) {
-            User user = new User(
-                    cursor.getString(0), // email
-                    cursor.getString(1), // name
-                    cursor.getString(2)  // phone
-            );
+            String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
+            String phone = cursor.getString(cursor.getColumnIndexOrThrow("phone"));
+            String password = cursor.getString(cursor.getColumnIndexOrThrow("password"));
+
             cursor.close();
-            return user;
+            return new User(email, name, phone, password);
         }
+
         cursor.close();
         return null;
     }
@@ -79,7 +81,7 @@ public class UserDatabase extends SQLiteOpenHelper {
         values.put("name", newName);
         values.put("phone", newPhone);
 
-        long result = db.update("users", values, "email=?", new String[]{email});
-        return result > 0;
+        int result  = db.update("users", values, "email=?", new String[]{email});
+        return result  > 0;
     }
 }

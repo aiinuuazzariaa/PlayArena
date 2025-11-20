@@ -1,7 +1,9 @@
 package com.example.playarena;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
     EditText etProfileEmail, etProfileName, etProfilePhone;
-    Button btnUpdateProfile, btnLogout;
+    Button btnLogout;
     UserDatabase userDb;
     String loggedEmail;
 
@@ -22,15 +24,15 @@ public class ProfileActivity extends AppCompatActivity {
         etProfileEmail = findViewById(R.id.etProfileEmail);
         etProfileName = findViewById(R.id.etProfileName);
         etProfilePhone = findViewById(R.id.etProfilePhone);
-        btnUpdateProfile = findViewById(R.id.btnUpdateProfile);
         btnLogout = findViewById(R.id.btnLogout);
 
         userDb = new UserDatabase(this);
 
-        loggedEmail = getIntent().getStringExtra("email");
+        SharedPreferences preferences = getSharedPreferences("user_session", MODE_PRIVATE);
+        loggedEmail = preferences.getString("email", null);
+
         loadUserData();
 
-        btnUpdateProfile.setOnClickListener(v -> updateProfile());
         btnLogout.setOnClickListener(v -> logoutUser());
     }
 
@@ -44,17 +46,9 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
-    private void updateProfile() {
-        String newName = etProfileName.getText().toString().trim();
-        String newPhone = etProfilePhone.getText().toString().trim();
-
-        boolean updated = userDb.updateUser(loggedEmail, newName, newPhone);
-
-        if (updated) {
-            Toast.makeText(this, "Profile updated!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Failed to update profile!", Toast.LENGTH_SHORT).show();
-        }
+    public void goToMain(View view) {
+        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
     private void logoutUser() {

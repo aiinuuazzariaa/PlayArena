@@ -1,6 +1,7 @@
 package com.example.playarena;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
@@ -63,7 +64,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void setDataToViews() {
-
         NumberFormat rupiah = NumberFormat.getCurrencyInstance(new Locale("in", "ID"));
         String hargaFormat = rupiah.format(priceLapangan)
                 .replace(",00", "")
@@ -82,7 +82,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void setupListeners() {
-
         btnBack.setOnClickListener(v -> {
             finish();
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
@@ -106,6 +105,13 @@ public class DetailActivity extends AppCompatActivity {
         });
 
         btnOrder.setOnClickListener(v -> {
+            SharedPreferences pref = getSharedPreferences("user_session", MODE_PRIVATE);
+            String loggedEmail = pref.getString("email", null);
+
+            if (loggedEmail == null) {
+
+            }
+
             Intent intent = new Intent(DetailActivity.this, OrderActivity.class);
 
             intent.putExtra("name", nameLapangan);

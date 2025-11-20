@@ -23,7 +23,7 @@
             android:contentDescription="PlayArena Logo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
             android:id="@+id/appTitle"
@@ -43,7 +43,7 @@
             android:padding="6dp"
             android:layout_marginEnd="8dp"
             android:contentDescription="User Profile"
-            android:background="?selectableItemBackgroundBorderless" />
+            android:background="?selectableItemBackgroundBorderless"/>
     </LinearLayout>
 
     <ImageView
@@ -53,7 +53,7 @@
         android:layout_height="250dp"
         android:scaleType="centerCrop"
         android:layout_marginTop="20dp"
-        android:contentDescription="Banner Booking" />
+        android:contentDescription="Banner Booking"/>
 
     <SearchView
         android:id="@+id/searchView"
@@ -61,7 +61,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/search_border"
-        android:queryHint="Search..." />
+        android:queryHint="Search..."/>
 
     <LinearLayout
         android:id="@+id/categoryFilter"
@@ -126,7 +126,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="12dp"/>
 
-    <include layout="@layout/footer" />
+    <include layout="@layout/footer"/>
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.playarena;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +58,7 @@ public class LapanganItemActivity extends RecyclerView.Adapter<LapanganItemActiv
 
         holder.btn_detail.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailActivity.class);
+
             intent.putExtra("name", lapangan.getName());
             intent.putExtra("location", lapangan.getLocation());
             intent.putExtra("category", lapangan.getCategory());
@@ -67,7 +69,8 @@ public class LapanganItemActivity extends RecyclerView.Adapter<LapanganItemActiv
             intent.putExtra("maps", lapangan.getMaps());
             intent.putExtra("rating", lapangan.getRating());
             intent.putExtra("rating_value", lapangan.getRating());
-            holder.itemView.getContext().startActivity(intent);
+
+            context.startActivity(intent);
         });
     }
 

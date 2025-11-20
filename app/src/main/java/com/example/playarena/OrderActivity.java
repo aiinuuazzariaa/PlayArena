@@ -2,6 +2,8 @@ package com.example.playarena;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,10 +29,28 @@ public class OrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
+        SharedPreferences prefs = getSharedPreferences("user_session", MODE_PRIVATE);
+        String loggedEmail = prefs.getString("email", "");
+
+        if (loggedEmail.isEmpty()) {
+            Intent intent = new Intent(OrderActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
         orderDb = new OrderDatabase(this);
+        UserDatabase userDb = new UserDatabase(this);
 
         initViews();
         getIntentData();
+
+        User loggedUser = userDb.getUserByEmail(loggedEmail);
+        if (loggedUser != null) {
+            etName.setText(loggedUser.getName());
+            etPhone.setText(loggedUser.getPhone());
+        }
+
         setupDatePicker();
         setupTimePicker();
         setupButtons();

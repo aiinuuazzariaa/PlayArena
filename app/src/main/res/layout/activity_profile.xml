@@ -8,7 +8,7 @@
     <LinearLayout
         android:paddingTop="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -24,39 +24,62 @@
         <EditText
             android:id="@+id/etProfileEmail"
             android:hint="Email"
+            android:textColor="#000000"
             android:enabled="false"
+            android:focusable="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etProfileName"
             android:hint="Name"
+            android:textColor="#000000"
+            android:enabled="false"
+            android:focusable="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etProfilePhone"
             android:hint="Phone"
+            android:textColor="#000000"
+            android:enabled="false"
+            android:focusable="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"/>
 
-        <Button
-            android:id="@+id/btnUpdateProfile"
-            android:text="Update Profile"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C398E"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="12dp"
+            android:layout_margin="6dp">
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:text="Logout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#E53935"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="10dp" />
+            <Button
+                android:id="@+id/btnCancel"
+                android:text="Cancel"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:backgroundTint="#E53935"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:onClick="goToMain"/>
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:text="Logout"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:backgroundTint="#1C398E"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

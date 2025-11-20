@@ -40,15 +40,21 @@ public class MainActivity extends AppCompatActivity {
         btnFutsal = findViewById(R.id.btnFutsal);
         btnTenis = findViewById(R.id.btnTenis);
 
-        SharedPreferences preferences = getSharedPreferences("user_session", MODE_PRIVATE);
-        String loggedEmail = preferences.getString("email", "");
+        SharedPreferences pref = getSharedPreferences("user_session", MODE_PRIVATE);
+        String email = pref.getString("email", null);
+
+        if (email == null) {
+            Intent intent = new Intent(this, LoginActivity.class); // BENERNYA LOGIN!
+            startActivity(intent);
+            finish();
+        }
 
         btnProfile = findViewById(R.id.btnProfile);
 
 
         btnProfile.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-            intent.putExtra("email", loggedEmail);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -81,11 +87,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        btnAll.setOnClickListener(v -> { resetCategoryFilter(); highlightButton(btnAll); });
+        btnAll.setOnClickListener(v -> applyCategory("", btnAll));
         btnBadminton.setOnClickListener(v -> applyCategory("badminton", btnBadminton));
         btnBasket.setOnClickListener(v -> applyCategory("basket", btnBasket));
         btnFutsal.setOnClickListener(v -> applyCategory("futsal", btnFutsal));
         btnTenis.setOnClickListener(v -> applyCategory("tenis", btnTenis));
+
+        applyCategory("", btnAll);
     }
 
     private void applyCategory(String category, Button btn) {
