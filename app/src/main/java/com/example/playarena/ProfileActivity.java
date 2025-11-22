@@ -51,6 +51,11 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToHistory(View view) {
+        Intent intent = new Intent(this, MyOrdersActivity.class);
+        startActivity(intent);
+    }
+
     private void logoutUser() {
         Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |

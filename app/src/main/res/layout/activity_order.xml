@@ -56,6 +56,23 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:text="Email"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:hint="Enter your email"
+            android:textColor="#000000"
+            android:background="@drawable/input_border"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
             android:text="Full Name"
             android:textColor="#000000"
             android:textStyle="bold"

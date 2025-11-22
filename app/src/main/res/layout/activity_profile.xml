@@ -11,6 +11,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/btnCancel"
+            android:text="Cancel"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:backgroundTint="#E53935"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="goToMain"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,23 +71,23 @@
             android:layout_margin="6dp">
 
             <Button
-                android:id="@+id/btnCancel"
-                android:text="Cancel"
+                android:id="@+id/btnOrder"
+                android:text="Transaction History"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
-                android:backgroundTint="#E53935"
+                android:backgroundTint="#1C398E"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
-                android:onClick="goToMain"/>
+                android:onClick="goToHistory"/>
 
             <Button
                 android:id="@+id/btnLogout"
                 android:text="Logout"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
-                android:backgroundTint="#1C398E"
+                android:backgroundTint="#E53935"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"

@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
 
 public class OrderActivity extends AppCompatActivity {
-    EditText etName, etPhone, etDate, etStartTime, etEndTime, etNotes;
+    EditText etEmail, etName, etPhone, etDate, etStartTime, etEndTime, etNotes;
     TextView tvFieldName, tvFieldPrice, tvTotalPrice;
     Button btnBackOrder, btnConfirmOrder;
     OrderDatabase orderDb;
@@ -47,6 +47,7 @@ public class OrderActivity extends AppCompatActivity {
 
         User loggedUser = userDb.getUserByEmail(loggedEmail);
         if (loggedUser != null) {
+            etEmail.setText(loggedUser.getEmail());
             etName.setText(loggedUser.getName());
             etPhone.setText(loggedUser.getPhone());
         }
@@ -57,6 +58,7 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        etEmail = findViewById(R.id.etEmail);
         etName = findViewById(R.id.etName);
         etPhone = findViewById(R.id.etPhone);
         etDate = findViewById(R.id.etDate);
@@ -148,6 +150,7 @@ public class OrderActivity extends AppCompatActivity {
         btnBackOrder.setOnClickListener(v -> finish());
 
         btnConfirmOrder.setOnClickListener(v -> {
+            String email = etEmail.getText().toString();
             String name = etName.getText().toString();
             String phone = etPhone.getText().toString();
             String date = etDate.getText().toString();
@@ -155,7 +158,7 @@ public class OrderActivity extends AppCompatActivity {
             String end = etEndTime.getText().toString();
             String notes = etNotes.getText().toString();
 
-            if (name.isEmpty() || phone.isEmpty() || date.isEmpty() ||
+            if (email.isEmpty() || name.isEmpty() || phone.isEmpty() || date.isEmpty() ||
                     start.isEmpty() || end.isEmpty()) {
                 Toast.makeText(this, "Please fill all required fields!", Toast.LENGTH_SHORT).show();
                 return;
@@ -167,6 +170,7 @@ public class OrderActivity extends AppCompatActivity {
                     transactionNumber,
                     lapanganName,
                     lapanganPrice,
+                    email,
                     name,
                     phone,
                     date,
